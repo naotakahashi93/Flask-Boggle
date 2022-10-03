@@ -1,0 +1,34 @@
+{% extends "base.html" %} 
+ 
+{% block title%} BOGGLE HOME {% endblock %}
+
+{% block content%} 
+<p> Total number of plays: <span id="numofplays"> </span></p>
+<p> Your highscore: <span id="highscore"> </span></p>
+
+<h1> BOGGLE! </h1>
+
+<div id="newgame">
+<div class="timer">
+    <span class="mins">01</span>
+    <span class="colon">:</span>
+    <span class="secs">00</span>
+    <button id="startBtn">start</button>
+
+</div>
+</br>
+<div class="gameboard">
+    {% for row in board %}
+    <div > {{row}} </div>
+    {% endfor %}
+</div>
+
+<form class ="guessform" action ="/checkword">
+</br>
+    <input type="text" name="guess" placeholder="GUESS!">
+    <button id="goBtn"> GO!</button>
+</form>
+<p id="msg"></p>  
+<p id="score"></p>
+</div>
+{% endblock %}
